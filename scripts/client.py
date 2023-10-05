@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     client = dynamic_reconfigure.client.Client("dynamic_reconfigure_template", timeout=30, config_callback=callback)
 
-    r = rospy.Rate(1)
+    r = rospy.Rate(0.1)
     x = 0
     b = False
     while not rospy.is_shutdown():
