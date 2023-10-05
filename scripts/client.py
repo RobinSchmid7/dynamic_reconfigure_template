@@ -18,9 +18,11 @@ if __name__ == "__main__":
     x = 0
     b = False
     while not rospy.is_shutdown():
-        x = x+1
-        if x>10:
-            x=0
+        x = x + 1
+        if x > 10:
+            x = 0
         b = not b
-        client.update_configuration({"int_param":x, "double_param":(1/(x+1)), "str_param":str(rospy.get_rostime()), "bool_param":b, "size":1})
+        client.update_configuration(
+            {"int_param": x, "double_param": (1 / (x + 1)), "str_param": str(rospy.get_rostime()), "bool_param": b,
+             "size": 1})
         r.sleep()
